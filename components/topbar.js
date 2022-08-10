@@ -14,7 +14,7 @@ export default function TopBar() {
           </div>
 
           <form className="col-start-3 col-span-3 w-fit justify-items-center "> 
-            <input type="text" id="search" name="search" required minlength="1"
+            <input type="text" id="search" name="search" required minLength="1"
             placeholder=" 🔎 검색"/>
           </form>
 
@@ -31,7 +31,7 @@ export default function TopBar() {
           </div>
 
           <div className='col-start-1 col-span-2 text-center hover:cursor-pointer'>
-            <Link href="">
+            <Link href="/travelRegister">
               <div>
                 <FontAwesomeIcon icon={faCalendarDays} size='lg' className='mr-2'/>
               여행 등록
