@@ -19,10 +19,12 @@ export default function TopBar() {
         </div>
 
 
+
         <div className='col-start-3 col-span-3'>
           <form>
-            <input type="text" id="search" name="search" required minlength="1"
+            <input type="text" id="search" name="search" required minLength="1"
               placeholder=" 🔎 검색" style={{ width: 350, height: 30 }} />
+
 
           </form>
         </div>
@@ -40,10 +42,12 @@ export default function TopBar() {
             </button>
           </div>
 
+
         <div className='col-start-1 ml-3 hover:cursor-pointer' >
           <Link href='/travelRegister'>
             <div>
               <FontAwesomeIcon icon={faCalendarDays} size='lg' className='mr-2' />
+
               여행 등록
             </div>
           </Link>

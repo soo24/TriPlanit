@@ -1,6 +1,7 @@
 import SetPlan from '../components/setPlan'
 import Head from 'next/head'
 import Mapscreen from '../components/Mapscreen';
+import PlanDay from '../components/plan_day'
 
 export default function travelRegister() {
     return (
@@ -16,12 +17,18 @@ export default function travelRegister() {
                 {/* <Mapscreen /> */}
                 <SetPlan />
                 
+                
 
             </div>
+            <div className='container w-[400px] bg-slate-50'>
+            <PlanDay/>
+           
+        </div>
 
             {/* 여기부터 수연코드 시작 */}
 
 
         </>
     );
+
 }
