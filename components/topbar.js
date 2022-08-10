@@ -9,14 +9,18 @@ export default function TopBar() {
     <div className='bg-blue-200 pt-6 pl-6w-full'>
         <div className="grid grid-cols-12  grid-rows-2 ml-5 zf:grid-cols-4 ">
 
-          <div className='col-start-1 col-span-2'>
+          <div className='col-start-1 col-span-2 ml-3'>
+            <Link href='/'>
             <Image src={Logo} alt="logo" height={30} width={150}/>
+            </Link>
           </div>
-
-          <form className="col-start-3 col-span-3 w-fit justify-items-center "> 
+          
+          <div className='col-start-3 col-span-3'>
+          <form> 
             <input type="text" id="search" name="search" required minlength="1"
-            placeholder=" 🔎 검색"/>
+            placeholder=" 🔎 검색" style={{width: 350, height: 30}}/>
           </form>
+          </div>
 
           <div className="col-start-11 zf:col-start-3 text-center"> 
             <button> 
@@ -30,7 +34,7 @@ export default function TopBar() {
             </button>
           </div>
 
-          <div className='col-start-1 col-span-2 text-center hover:cursor-pointer'>
+          <div className='col-start-1 ml-3 hover:cursor-pointer'>
             <Link href="">
               <div>
                 <FontAwesomeIcon icon={faCalendarDays} size='lg' className='mr-2'/>
@@ -39,15 +43,15 @@ export default function TopBar() {
             </Link>
           </div>
 
-          <div className='col-start-3 col-span-2 gap-4 text-center hover:cursor-pointer'>
-            <Link href="">
+          <div className='col-start-2 ml-3 hover:cursor-pointer'>
+            <Link href='/recommendation'>
             <div>
                 <FontAwesomeIcon icon={faLocationDot} size='lg' className='mr-2' />
                 여행지 추천
               </div>
             </Link>
           </div>
-          <div className='col-start-5 gap-4 col-span-2 text-center hover:cursor-pointer'>
+          <div className='col-start-3 ml-5 hover:cursor-pointer'>
             <Link href="">
               <div>
                 <FontAwesomeIcon icon={faUsersLine} size='lg'className='mr-2' />

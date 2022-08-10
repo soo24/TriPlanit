@@ -1,10 +1,11 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Recommendation_menu from '../components/Recommendation_menu'
+import NavBar from '../components/topbar'
 export default function Recommendation() {
   return (
     <>
-      <div>Navbar section</div>
+      <div><NavBar /></div>
       <main>
         <div className="flex flex-row p-16 items-center" id='country'>
           <Image src="/korea.png" width={100} height={100}></Image>
