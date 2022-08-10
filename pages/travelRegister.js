@@ -1,4 +1,3 @@
-import PlanList from '../components/plan_list'
 import PlanDay from '../components/plan_day'
 
 export default function travelRegister() {
@@ -10,7 +9,6 @@ export default function travelRegister() {
         {/* 여기부터 수연코드 시작 */}
         <div className='container w-[400px] bg-slate-50'>
             <PlanDay/>
-            <PlanList/>
            
         </div>
 
