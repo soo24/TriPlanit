@@ -1,11 +1,15 @@
 import '../styles/globals.css'
+import Script from "next/script"
+
+const dotenv = require('dotenv');
+dotenv.config();
 
 function MyApp({ Component, pageProps }) {
   return (
     <>
-    <script
-            type="text/javascript"
-            src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_API_KEY}&libraries=services`}
+    <Script
+      src={`//dapi.kakao.com/v2/maps/sdk.js?appkey=${process.env.NEXT_PUBLIC_KAKAO_API_KEY}&libraries=services,clusterer&autoload=false`}
+      strategy="beforeInteractive"
     />
     <Component {...pageProps} />
     </>
