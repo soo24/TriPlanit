@@ -1,5 +1,6 @@
 import SetPlan from '../components/setPlan'
 import Head from 'next/head'
+import Mapscreen from '../components/Mapscreen';
 
 export default function travelRegister() {
     return (
@@ -11,7 +12,11 @@ export default function travelRegister() {
             </div>
             {/* 여기 div 스타일은 진아껄로 맞추기 */}
             <div>
+            {/* 오버레이 짜야함 */}
+                {/* <Mapscreen /> */}
                 <SetPlan />
+                
+
             </div>
 
             {/* 여기부터 수연코드 시작 */}

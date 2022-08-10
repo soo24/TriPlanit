@@ -18,10 +18,12 @@ export default function TopBar() {
           </Link>
         </div>
 
+
         <div className='col-start-3 col-span-3'>
           <form>
             <input type="text" id="search" name="search" required minlength="1"
               placeholder=" 🔎 검색" style={{ width: 350, height: 30 }} />
+
           </form>
         </div>
 
