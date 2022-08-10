@@ -1,6 +1,6 @@
 import MapScreen from '../components/MapScreen';
 
-export default function Recommendation() {
+export default function Planner() {
     return (
       <>
         <MapScreen></MapScreen>
