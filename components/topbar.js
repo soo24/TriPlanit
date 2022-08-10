@@ -3,8 +3,11 @@ import Image from 'next/image'
 import Logo from '../public/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendarDays, faLocationDot, faUsersLine } from "@fortawesome/free-solid-svg-icons";
+import { useRouter } from 'next/router';
 
 export default function TopBar() {
+  const router = useRouter();
+
   return (
     <div className='bg-blue-200 pt-6 pl-6w-full'>
         <div className="grid grid-cols-12  grid-rows-2 ml-5 zf:grid-cols-4 ">
@@ -23,13 +26,13 @@ export default function TopBar() {
           </div>
 
           <div className="col-start-11 zf:col-start-3 text-center"> 
-            <button> 
+            <button type='button' onClick={() => router.push('/login')}> 
               로그인
             </button>
           </div>
 
           <div className="col-start-12 rounded-[5px] bg-white text-center w-9/12 mb-5 zf:hidden"> 
-            <button  > 
+            <button > 
               회원가입
             </button>
           </div>
