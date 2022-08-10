@@ -47,7 +47,7 @@ export default function Mapscreen() {
         }}
         style={{
           width: "100%",
-          height: "350px",
+          height: "800px",
         }}
         level={3}
         onCreate={setMap}
