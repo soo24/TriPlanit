@@ -1,9 +1,9 @@
-import MapScreen from '../components/MapScreen';
+import Mapscreen from '../components/Mapscreen';
 
 export default function Planner() {
     return (
       <>
-        <MapScreen></MapScreen>
+        <Mapscreen />
       </>
     )
   }
