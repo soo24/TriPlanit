@@ -1,10 +1,45 @@
-import { Map, MapMarker } from "react-kakao-maps-sdk"
+import { Map, MapMarker} from "react-kakao-maps-sdk"
 import { useEffect,useState } from 'react'
+import MapOverlay from "./MapOverlay";
+import MapLine from "./MapLine";
 
 export default function Mapscreen() {
-    const [info, setInfo] = useState()
     const [markers, setMarkers] = useState([])
     const [map, setMap] = useState()
+    let path_data =[]
+
+    const EventMarkerContainer = ({ position, content, address }) => {
+      const [isOpen, setIsOpen] = useState(false)
+
+      return (
+        <MapMarker
+          position={position} // 마커를 표시할 위치
+          onClick={() => {
+            setIsOpen(true)
+          }}
+          clickable={true}
+        >
+          {isOpen && (
+            <div className="">
+              <img
+                alt="close"
+                width="14"
+                height="13"
+                src="https://t1.daumcdn.net/localimg/localimages/07/mapjsapi/2x/bt_close.gif"
+                style={{
+                  position: "absolute",
+                  right: "5px",
+                  top: "5px",
+                  cursor: "pointer",
+                }}
+                onClick={() => setIsOpen(false)}
+              />
+              <MapOverlay content={content} address={address} />
+          </div>
+          )}
+        </MapMarker>
+      )
+    }
   
     useEffect(() => {
       if (!map) return
@@ -26,7 +61,7 @@ export default function Mapscreen() {
                 lng: data[i].x,
               },
               content: data[i].place_name,
-              address: data[i].address_name
+              address: data[i].place_url,
             })
             // @ts-ignore
             bounds.extend(new kakao.maps.LatLng(data[i].y, data[i].x))
@@ -40,29 +75,37 @@ export default function Mapscreen() {
     }, [map])
   
     return (
-      <Map // 로드뷰를 표시할 Container
-        center={{
-          lat: 37.566826,
-          lng: 126.9786567,
-        }}
-        style={{
-          width: "100%",
-          height: "800px",
-        }}
-        level={3}
-        onCreate={setMap}
-      >
-        {markers.map((marker) => (
-          <MapMarker
-            key={`marker-${marker.content}-${marker.position.lat},${marker.position.lng}`}
-            position={marker.position}
-            onClick={() => setInfo(marker)}
-          >
-            {info &&info.content === marker.content && (
-              <div className="">{marker.content}{marker.address}</div>
-            )}
-          </MapMarker>
-        ))}
-      </Map>
+      <>
+      {/* <RemovableCustomOverlayStyle /> */}
+       <Map // 지도를 표시할 Container
+      center={{
+        // 지도의 중심좌표
+        lat: 33.450701,
+        lng: 126.570667,
+      }}
+      style={{
+        // 지도의 크기
+        width: "100%",
+        height: "100vh",
+      }}
+      level={3} // 지도의 확대 레벨
+      onCreate={setMap}
+    >
+      {/* 장소 연결하는 선그리기 */}
+      
+      {markers.map((value) => (
+        console.log(value.place_url),
+        path_data.push(value.position),
+        <EventMarkerContainer
+          key={`EventMarkerContainer-${value.position.lat}-${value.position.lng}`}
+          position={value.position}
+          content={value.content}
+          address={value.address}
+        />
+      ))}
+
+      <MapLine data={path_data} />
+    </Map>
+      </>
     )
   }
