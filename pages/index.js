@@ -5,6 +5,7 @@ import Image from 'next/image'
 import TopBar from '../components/topbar';
 import MyTrip from '../components/mytrip';
 import Others from '../components/Others';
+import Mapscreen from '../components/Mapscreen';
 
 // auth
 import { useSession, signIn, signOut } from 'next-auth/react';
@@ -23,6 +24,7 @@ export default function Home()   {
     <TopBar/>
     <MyTrip />
     <Others />
+    {/* <Mapscreen /> */}
     
     
     </div>
