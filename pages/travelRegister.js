@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Mapscreen from '../components/Mapscreen';
 import PlanDay from '../components/plan_day'
 
-export default function travelRegister() {
+export default function TravelRegister() {
     return (
         <>
             <div>

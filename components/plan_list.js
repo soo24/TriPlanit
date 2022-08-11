@@ -6,10 +6,9 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 
-export default function plan_list() {
+export default function Plan_list() {
 
     const [cardList, setCardList] = useState([{
-        id: 0,
         city: '전주',
         food_title: '베테랑 칼국수',
         time : '11:30 AM',
@@ -34,9 +33,9 @@ export default function plan_list() {
     return (
         <div className='grid grid-cols-1 text-stone-900'>
             {
-                cardList.map((card) => {
+                cardList.map((card, index) => {
                     return (
-                        <div id={card.id} className='flex flex-row bg-blue-200 mt-1.5 mb-1.5 ml-6 mr-6 border-white pl-3 pt-3 pb-3 shadow-lg'>
+                        <div key={index} className='flex flex-row bg-blue-200 mt-1.5 mb-1.5 ml-6 mr-6 border-white pl-3 pt-3 pb-3 shadow-lg'>
                             <Image className="rounded-md" src={card.food_pic} alt="" width={100} height={80}/>
                             <div className='grid grid-cols-5 w-4/5'>
                                 <form className='col-start-1 col-span-4 flex flex-col ml-6'>
