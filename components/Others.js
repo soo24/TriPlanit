@@ -14,7 +14,7 @@ export default function Others({title}) {
                     <div><Image className="" src='/others3.png' alt="" width={500} height={350}/><p>노잼 아닌 유잼 대전여행</p></div>
                     <div><Image className="" src='/others4.png' alt="" width={500} height={350}/><p>전주에서 맛집 탐방</p></div>
                 </div>
-             </div>
+            </div>
         </div>
     );
-  }
+}

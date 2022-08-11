@@ -1,12 +1,19 @@
 import Head from 'next/head'
 import Image from 'next/image'
 
-import Link from 'next/link';
+// components
 import TopBar from '../components/topbar';
 import MyTrip from '../components/mytrip';
 import Others from '../components/Others';
 
-export default function Home() {
+// auth
+import { useSession, signIn, signOut } from 'next-auth/react';
+
+export default function Home()   {
+  const { data: session } = useSession();
+  if (session) {
+    
+  }
   return (
     <div>
       <Head>
