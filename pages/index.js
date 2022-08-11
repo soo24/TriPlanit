@@ -17,7 +17,7 @@ export default function Home() {
     <TopBar/>
     <MyTrip />
     <Others />
-    <Mapscreen />
+    {/* <Mapscreen /> */}
     
     
     </div>
