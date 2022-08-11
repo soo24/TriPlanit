@@ -5,6 +5,7 @@ export default function Mapscreen() {
     const [info, setInfo] = useState()
     const [markers, setMarkers] = useState([])
     const [map, setMap] = useState()
+    const [isOpen, setIsOpen] = useState(false)
   
     useEffect(() => {
       if (!map) return
@@ -40,6 +41,8 @@ export default function Mapscreen() {
     }, [map])
   
     return (
+      <>
+      <RemovableCustomOverlayStyle />
       <Map // 로드뷰를 표시할 Container
         center={{
           lat: 37.566826,
@@ -56,7 +59,10 @@ export default function Mapscreen() {
           <MapMarker
             key={`marker-${marker.content}-${marker.position.lat},${marker.position.lng}`}
             position={marker.position}
-            onClick={() => setInfo(marker)}
+            onClick={() => {
+              setInfo(marker)
+              setInfo(true)
+            }}
           >
             {info &&info.content === marker.content && (
               <div className="">{marker.content}{marker.address}</div>
@@ -64,5 +70,6 @@ export default function Mapscreen() {
           </MapMarker>
         ))}
       </Map>
+      </>
     )
   }
