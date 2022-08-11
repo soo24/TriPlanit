@@ -24,11 +24,11 @@ export default function Login() {
                                         <div className='p-4'>
                                                 <form action="" method="post" className='border-2 border-slate-300 p-4'>
                                                         <div id="email-column" className="p-4">
-                                                                <label className="block mb-1" for="username">Email</label><br/>
+                                                                <label className="block mb-1" htmlFor="username">Email</label><br/>
                                                                 <input className="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline" required type="text" id="email" name="email"></input><br />
                                                         </div>
                                                         <div id="password-column" className='p-4'>
-                                                                <label className="block mb-1" for="password">password</label><br />
+                                                                <label className="block mb-1" htmlFor="password">password</label><br />
                                                                 <input className="w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline" required type="text" id="password" name="password"></input><br />
                                                         </div>
                                                         <div className="p-4">

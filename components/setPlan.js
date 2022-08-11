@@ -3,20 +3,39 @@ import TextField from '@mui/material/TextField';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleLeft, faCircleRight } from '@fortawesome/free-solid-svg-icons'
 
 
-export default function setPlan() {
+export default function SetPlan({ toggleToParent }) {
     const [startDate, setStartDate] = useState(null);
     const [endDate, setEndDate] = useState(null);
+    const [toggleBtn, setToggle] = useState(false);
+
+    const toggleSidebar = () => {
+        setToggle(toggleBtn => !toggleBtn);
+        toggleToParent(toggleBtn);
+    }
+
     return (
 
-        <div className='bg-blue-200 w-[400px] h-[120px]'>
-            <form action="" method="post" >
-                <input className="m-3 w-3/4 h-8 px-3 text-base placeholder-gray-600 border border-blue-300 focus:shadow-outline" required type="text" id="plan_name" name="plan_name" placeholder="Plan 이름"></input>
-            </form>
+        // hide되면 true, show 되면 false
+        <> 
 
-            <div className='grid grid-cols-4 gap-2 mx-3'>
-                <div className='col-start-1 col-span-2'>
+        <div className='bg-blue-200 w-[400px] h-[120px]' >
+        
+
+        <div className='grid grid-cols-8 gap-2 mx-3'>
+
+            <form action="" method="post" className='col-start-1 col-span-7'>
+                <input className="m-3 w-4/5 h-8 px-3 text-base placeholder-gray-600 border border-blue-300 focus:shadow-outline" required type="text" id="plan_name" name="plan_name" placeholder="Plan 이름"></input>
+            </form>
+            
+            <button className='col-start-8' onClick={() => toggleSidebar()}>
+                    <FontAwesomeIcon icon={faCircleLeft} size='xl' className='m-3' />
+                </button>
+            
+                <div className='col-start-1 col-span-4'>
                     <LocalizationProvider dateAdapter={AdapterDateFns}>
                         <DatePicker
                             label="언제부터"
@@ -32,7 +51,7 @@ export default function setPlan() {
                     </LocalizationProvider>
                 </div>
 
-                <div className='col-start-3 col-span-2'>
+                <div className='col-start-5 col-span-4'>
                     <LocalizationProvider dateAdapter={AdapterDateFns} >
                         <DatePicker
                             label="언제까지"
@@ -49,9 +68,8 @@ export default function setPlan() {
                 </div>
             </div>
 
-
-
         </div>
 
+        </>
     );
 }
