@@ -6,7 +6,7 @@ config.autoAddCss = false
 
 function MyApp({ Component, pageProps, session }) {
   return (
-    <SessionProvider session={session}>
+    <SessionProvider session={pageProps.session}>
       <Component {...pageProps} />
     </SessionProvider>
   );
