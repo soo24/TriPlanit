@@ -1,6 +1,5 @@
 import SetPlan from '../components/setPlan'
 import Head from 'next/head'
-import Mapscreen from '../components/Mapscreen';
 import PlanDay from '../components/plan_day'
 
 export default function TravelRegister() {
