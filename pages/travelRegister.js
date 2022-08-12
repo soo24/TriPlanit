@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Mapscreen from '../components/Mapscreen';
 import Plan_sidebar from '../components/plan_sidebar'
 
 export default function TravelRegister() {
