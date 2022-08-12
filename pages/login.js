@@ -3,7 +3,6 @@ import Head from 'next/head'
 import TopBar from '../components/topbar';
 import { useSession, signIn, signOut, getSession } from 'next-auth/react';
 import { Router, useRouter } from 'next/router';
-import { redirect } from 'next/dist/server/api-utils';
 
 export default function Login({ provider,req }) {
 	const router = useRouter();

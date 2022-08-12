@@ -14,7 +14,7 @@ export default function Plan_list() {
         time : '11:30 AM',
         food_pic: noodlePic
     },
- ])
+    ])
 
     const handleAddCard = () => {
         console.log('click!')
@@ -44,24 +44,24 @@ export default function Plan_list() {
                                     <br></br>
                                     <p>{card.time}</p>
                                 </form>
-                                <button className='col-start-5 col-span-1 justify-items-center'> <FontAwesomeIcon icon={faTrashAlt} size="xs" onClick={handleRemove} /></button>
+                                <button className='col-start-5 col-span-1 justify-items-center' onClick={handleRemove}> <FontAwesomeIcon icon={faTrashAlt} size="xs" onClick={handleRemove} /></button>
                             </div>
-                            
+
                         </div>
-                        
+
                     )
                 })
             }
-        
 
-        <div className='bg-blue-100 mt-1.5 mb-1.5 ml-6 mr-6 border-white p-3'>
-            <button onClick={handleAddCard} className='w-full'>
-                <div className='bg-white w-[100px] h-[80px] border-white p-6 rounded-md'>
-                        <FontAwesomeIcon icon={faPlus} size='2xl'/>
-                </div>
-            </button>
+
+            <div className='bg-blue-100 mt-1.5 mb-1.5 ml-6 mr-6 border-white p-3'>
+                <button onClick={handleAddCard} className='w-full'>
+                    <div className='bg-white w-[100px] h-[80px] border-white p-6 rounded-md'>
+                        <FontAwesomeIcon icon={faPlus} size='2xl' />
+                    </div>
+                </button>
+            </div>
+
         </div>
-
-    </div>
     )
-  }
+}
