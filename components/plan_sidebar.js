@@ -9,7 +9,7 @@ export default function Plan_sidebar() {
                     <SetPlan />
             </div>
 
-            <div className='row-start-2 container overflow-scroll h-[770px] w-[400px] scroll-smooth bg-slate-50 '>
+            <div className='row-start-2 grid-span-5 container overflow-scroll h-screen w-[400px] scroll-smooth bg-slate-50 '>
                 <PlanDay/>
             </div>
         </div>
