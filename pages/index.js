@@ -1,11 +1,9 @@
 import Head from 'next/head'
-import Image from 'next/image'
 
 // components
 import TopBar from '../components/topbar';
 import MyTrip from '../components/mytrip';
 import Others from '../components/Others';
-import Mapscreen from '../components/Mapscreen';
 
 // auth
 import { useSession, signIn, signOut, getSession } from 'next-auth/react';
