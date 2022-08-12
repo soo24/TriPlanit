@@ -12,7 +12,6 @@ export default function TravelRegister() {
             </div>
 
             <div className='fixed'>
-                {/* 오버레이 짜야함 */}
                 {/* <Mapscreen /> */}
             </div>
  
