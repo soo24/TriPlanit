@@ -4,6 +4,7 @@ import noodlePic from '../public/noodle.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import CardModal from '../components/modal/CardModal'
 
 
 export default function plan_list() {
@@ -46,7 +47,19 @@ export default function plan_list() {
                                     <br></br>
                                     <p>{card.time}</p>
                                 </form>
-                                <button className='col-start-5 col-span-1 justify-items-center'> <FontAwesomeIcon icon={faTrashAlt} size="xs" onClick={handleRemove} /></button>
+                                <div className='grid place-items-center'><button> 
+                                    <CardModal
+                                        title={"정말로 삭제하시겠습니까?"}
+                                        content={"일정을 삭제하면 다시 복구할 수 없습니다."}
+                                        onConfirm={() => console.log('Delete Confirmed')}
+                                        onCancel={() => console.log('Delete Canceled')}
+                                        buttons={[
+                                            { role: "cancel", onClick: () => console.log("custom test"), toClose: true, classes: "bg-zinc-500/20 px-4 py-2 rounded-lg hover:bg-zinc-500/30 transition-all duration-200", label: "취소" },
+                                            { role: "confirm", toClose: false, classes: "bg-blue-200 px-4 py-2 rounded-lg hover:bg-blue-400 transition-all duration-200", label: "삭제" }
+                                        ]}
+                                        >
+                                        <FontAwesomeIcon icon={faTrashAlt} size="xs" onClick={handleRemove} /> 
+                                        </CardModal> </button></div>
                             </div>
                             
                         </div>
