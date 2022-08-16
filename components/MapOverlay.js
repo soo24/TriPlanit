@@ -6,12 +6,13 @@ export default function MapOverlay ({ content, address }) {
 
     return (
       <>
-
-        <div className="p-1">{content}</div>
-        <div className="p-1">
-            <Link href={address}>홈페이지 링크</Link>
+        <div className="grid grid-cols-4 grid-rows-2">
+          <div className="text-[14px] col-span-3">{content}</div>
+          <div className="text-sm col-span-3">
+              <Link href={address}>홈페이지 링크</Link>
+          </div>
         </div>
-
+        <br />
       </>
     )
 }

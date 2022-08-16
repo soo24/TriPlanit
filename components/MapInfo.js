@@ -1,4 +1,4 @@
-import { Map, MapMarker} from "react-kakao-maps-sdk"
+import { Map, MapMarker, MapInfoWindow} from "react-kakao-maps-sdk"
 import { useEffect,useState } from 'react'
 import MapOverlay from "./MapOverlay";
 import MapLine from "./MapLine";
@@ -20,26 +20,22 @@ export default function Mapscreen() {
           clickable={true}
         >
           {isOpen && (
-            <>
             <div className="p-2">
               <MapOverlay content={content} address={address} />
-              <div>
-                <img
+              <img
                 alt="close"
                 width="14"
                 height="13"
                 src="https://t1.daumcdn.net/localimg/localimages/07/mapjsapi/2x/bt_close.gif"
                 style={{
                   position: "absolute",
-                  right: "5px",
+                  right: "1px",
                   top: "5px",
                   cursor: "pointer",
                 }}
                 onClick={() => setIsOpen(false)}
               />
-            </div>
           </div>
-        </>
           )}
         </MapMarker>
       )

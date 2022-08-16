@@ -4,7 +4,9 @@ import { faPlane } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
 
 export default function mytrip() {
+
     const router = useRouter();
+    
     return (
         <div>
             <div className='grid grid-cols-2 gap-8 m-10'>
