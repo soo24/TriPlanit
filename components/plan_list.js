@@ -10,14 +10,14 @@ import Modal from '../components/modal';
 export default function Plan_list() {
 
     const [cardList, setCardList] = useState([{
-        id:0,
+        id: 0,
         city: '전주',
         food_title: '베테랑 칼국수',
-        time : '11:30 AM',
+        time: '11:30 AM',
         food_pic: noodlePic
     },
     ])
-    
+
     const [modal, setModal] = useState(false);
 
 
@@ -27,7 +27,7 @@ export default function Plan_list() {
             ...cardList,
             {
                 // 몰달 modal 띄우는거 여기에 작성
-                
+
             },
         ])
     }
@@ -38,7 +38,7 @@ export default function Plan_list() {
         //setCardList(cardList.filter((card) => card.id !== 0));
         // setCardList(cardList.filter((card) => card.index !== 0));
     };
-    
+
     return (
         <div className='grid grid-cols-1 text-stone-900'>
             {
@@ -46,7 +46,7 @@ export default function Plan_list() {
                     return (
                         <div key={index} className='flex flex-row bg-blue-200 mt-1.5 mb-1.5 ml-6 mr-6 border-white pl-3 pt-3 pb-3 shadow-lg'>
 
-                            <Image className="rounded-md" src={card.food_pic} alt="" width={100} height={80}/>
+                            <Image className="rounded-md" src={card.food_pic} alt="" width={100} height={80} />
                             <div className='grid grid-cols-5 w-4/5'>
                                 <form className='col-start-1 col-span-4 flex flex-col ml-6'>
                                     <p>{card.city}</p>
@@ -66,24 +66,15 @@ export default function Plan_list() {
 
             <div className='bg-blue-100 mt-1.5 mb-1.5 ml-6 mr-6 border-white p-3'>
 
-                    
-                       
-                        <button onClick={() => { setModal(true) }} > 
-                            <div className='bg-white w-[100px] h-[80px] border-white p-6 rounded-md'>
-                            <FontAwesomeIcon icon={faPlus} size='2xl' />
-                            </div>
-                
-                        </button>
-                        {modal ? <Modal /> : null}
+                <button onClick={() => { setModal(true) }} >
+                    <div className='bg-white w-[100px] h-[80px] border-white p-6 rounded-md'>
+                        <FontAwesomeIcon icon={faPlus} size='2xl' />
+                    </div>
 
-                        <button className='hidden' onClick={() => { setModal(false) }} > 모달창 닫기</button>
-
-                        
-                  
+                </button>
+                {modal ? <Modal /> : null}
+                <button className='hidden' onClick={() => { setModal(false) }} > 모달창 닫기</button>
             </div>
-
-            
-
         </div>
     )
 }
