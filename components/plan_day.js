@@ -139,7 +139,6 @@ export default function Plan_day({ toggleToParent }) {
                         
                         dayList.map((day, index) => {
                             return (
-                                
                                 <div id={index} key={index} className="text-lg align-text-bottom text-stone-700  mt-6">
                                     <p className=" ml-6"> Day {day.day_id} - {day.day_month}.{day.day_date}</p>
                                     <PlanList />

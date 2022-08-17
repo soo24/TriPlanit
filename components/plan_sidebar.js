@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleRight } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 
-export default function travelRegister() {
+export default function Plan_sidebar() {
     const [toggleBtn, setToggle] = useState(false);
 
     const toggleToParent = (x) => {

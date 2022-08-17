@@ -8,11 +8,9 @@ export default function Recommendation() {
       <div><NavBar /></div>
       <main>
         <div className="flex flex-row p-16 items-center" id='country'>
-<<<<<<< HEAD
+
           <Image src="/korea.png" width={100} height={100} alt="rep. korea"></Image>
-=======
-          <Image src="/korea.png" alt="temporary" width={100} height={100}></Image>
->>>>>>> feature/cal
+
           <h3 className='p-4 font-extrabold text-4xl'>대한민국</h3>
         </div>
         <div id="region" className="p-16 pt-0 ">
