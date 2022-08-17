@@ -15,14 +15,3 @@ export default function Modal({ }) {
 
     )
     }
-
-//     //  <div>
-//     <button onClick={() => { setModal(true) }} > 모달창 열기</button>
-//     {modal == true ? <Modal /> : null}
-// </div>
-
-//  닫기버튼
-//<button onClick={() => { setModal(false) }} > 모달창 닫기</button> 
-
-// {/* 저장 누르면 아래가 실행되게 */}
- //               {/* <button onClick={handleAddCard} className='w-full'> */}

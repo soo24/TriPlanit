@@ -6,31 +6,36 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import Modal from '../components/modal';
 import CardModal from '../components/modal/CardModal'
+import { modalClasses } from '@mui/material';
 
 
-export default function Plan_list() {
+export default function Plan_list({day_id}) {
 
     const [cardList, setCardList] = useState([{
         id:0,
         city: '전주',
         food_title: '베테랑 칼국수',
         time : '11:30 AM',
-        food_pic: noodlePic
-    },
-    ])
+         food_pic: noodlePic
+     },
+     ])
     
     const [modal, setModal] = useState(false);
 
 
     const handleAddCard = () => {
         console.log('click!')
-        setCardList([
-            ...cardList,
-            {
-                // 몰달 modal 띄우는거 여기에 작성
-                
-            },
-        ])
+
+        const newCard = {
+            date_id: day_id, 
+            list_id: '0',
+            place: '전주',
+            name: '비빔밥',
+            time : '11:30', //datepicker 써보기
+            pic: picture
+        }
+
+        setCardList(cardList.push(newCard));
     }
 
     const handleRemove = (cardId) => {
@@ -39,7 +44,7 @@ export default function Plan_list() {
         //test
         //setCardList(cardList.filter((card) => card.id !== 0));
         // setCardList(cardList.filter((card) => card.index !== 0));
-
+        //추후에 삭제기능구현할 예정
         setCardList(cardList.filter((card) => card.id !== 0));
     };
     
@@ -67,7 +72,8 @@ export default function Plan_list() {
                                         onCancel={() => console.log('Delete Canceled')}
                                         buttons={[
                                             { role: "cancel", onClick: () => console.log("custom test"), toClose: true, classes: "bg-zinc-500/20 px-4 py-2 rounded-lg hover:bg-zinc-500/30 transition-all duration-200", label: "취소" },
-                                            { role: "confirm", toClose: false, classes: "bg-blue-200 px-4 py-2 rounded-lg hover:bg-blue-400 transition-all duration-200", label: "삭제" }
+                                            { role: "confirm", toClose: false ,classes: "bg-blue-200 px-4 py-2 rounded-lg hover:bg-blue-400 transition-all duration-200", label: "삭제" }
+                                            
                                         ]}
                                         >
                                         <FontAwesomeIcon icon={faTrashAlt} size="xs" onClick={handleRemove} /> 
@@ -85,15 +91,16 @@ export default function Plan_list() {
 
                     
                        
-                        <button onClick={() => { setModal(true) }} > 
+                        <button onClick={() => { setModal(true) }}> 
                             <div className='bg-white w-[100px] h-[80px] border-white p-6 rounded-md'>
                             <FontAwesomeIcon icon={faPlus} size='2xl' />
                             </div>
                 
                         </button>
                         {modal ? <Modal /> : null}
-
-                        <button className='hidden' onClick={() => { setModal(false) }} > 모달창 닫기</button>
+                        {modal ? <button onClick={handleAddCard} className='w-full'> Add </button> : ""}
+                        {modal ? <button onClick={() => { setModal(false) }} className='w-full'> Close</button> : "" }
+                        
 
                         
                   

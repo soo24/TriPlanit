@@ -129,7 +129,7 @@ export default function Plan_day({ toggleToParent }) {
 
             </div>
 
-            <div className='container w-[400px] bg-slate-50'>
+            <div>
             
                 <div className='grid grid-cols-1 mb-1'>
                 <button className='bg-blue-300 hover:bg-blue-400 hover:text-white' onClick={() => calTheDay()}>
@@ -141,7 +141,7 @@ export default function Plan_day({ toggleToParent }) {
                             return (
                                 <div id={index} key={index} className="text-lg align-text-bottom text-stone-700  mt-6">
                                     <p className=" ml-6"> Day {day.day_id} - {day.day_month}.{day.day_date}</p>
-                                    <PlanList />
+                                    <PlanList day_id={day.day_id} />
                                 </div>
                             )
                         })
