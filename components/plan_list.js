@@ -58,7 +58,7 @@ export default function Plan_list() {
                                     <br></br>
                                     <p>{card.time}</p>
                                 </form>
-                                <button className='col-start-5 col-span-1 justify-items-center' onClick={handleRemove}> <FontAwesomeIcon icon={faTrashAlt} size="xs" onClick={handleRemove} /></button>
+                                
                                 <div className='grid place-items-center'><button> 
                                     <CardModal
                                         title={"정말로 삭제하시겠습니까?"}
