@@ -58,14 +58,14 @@ export default function MyPage() {
                                     type='submit' value="modify">정보 수정하기</button> }
                             </div>
                         </div>
-
+                        
                         {btnclick ?
                             <div className='col-start-3 pt-28'>
                                 <div className='font-bold text-2xl'>이름</div>
                                 <input required type="text" id="user_name" name="user_name" onChange={handleNameChange} className="mt-2 mb-5 w-full h-10 px-3 text-base placeholder-gray-600 border rounded-lg focus:shadow-outline"></input><br />
 
                                 <div className='font-bold text-2xl'>이메일</div>
-                                <div className='text-xl'>{session.user.email}</div><br />
+                                <div className='text-xl'>{session && session.user.email}</div><br />
 
                                 <div className='font-bold text-2xl'>성별</div>
                                 <div className='text-xl mb-5'>
@@ -105,10 +105,10 @@ export default function MyPage() {
 
                             : <div className='col-start-3 pt-28'>
                                 <div className='font-bold text-2xl'>이름</div>
-                                <div className='text-xl'>{session.user.name}</div><br />
+                                <div className='text-xl'>{session & session.user.name}</div><br />
 
                                 <div className='font-bold text-2xl'>이메일</div>
-                                <div className='text-xl'>{session.user.email}</div><br />
+                                <div className='text-xl'>{session & session.user.email}</div><br />
 
                                 <div className='font-bold text-2xl'>성별</div>
                                 <div className='text-xl'>{gender=='male'?'남':'여'}</div><br />
