@@ -105,10 +105,10 @@ export default function MyPage() {
 
                             : <div className='col-start-3 pt-28'>
                                 <div className='font-bold text-2xl'>이름</div>
-                                <div className='text-xl'>{session & session.user.name}</div><br />
+                                <div className='text-xl'>{session && session.user.name}</div><br />
 
                                 <div className='font-bold text-2xl'>이메일</div>
-                                <div className='text-xl'>{session & session.user.email}</div><br />
+                                <div className='text-xl'>{session && session.user.email}</div><br />
 
                                 <div className='font-bold text-2xl'>성별</div>
                                 <div className='text-xl'>{gender=='male'?'남':'여'}</div><br />
