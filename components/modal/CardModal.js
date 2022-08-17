@@ -1,4 +1,4 @@
-const { Fragment, useState, useEffect } = require("react");
+import React, { useState, Fragment, useEffect } from 'react';
 const { Transition } = require("@headlessui/react");
 
 export default function CardModal({

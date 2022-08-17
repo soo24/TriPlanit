@@ -1,7 +1,7 @@
-const { Fragment, useState, useEffect } = require("react");
+import React, { useState,Fragment, useEffect } from 'react';
 const { Transition } = require("@headlessui/react");
 
-export default function addModal({
+export default function AddModal({
     buttons = [],
     onCancel = "",
     onAdd = "",
