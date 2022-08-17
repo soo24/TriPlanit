@@ -12,6 +12,7 @@ import { modalClasses } from '@mui/material';
 export default function Plan_list() {
 
     const [cardList, setCardList] = useState([{
+        //삭제기능 테스트를 위한 데이터
         id:0,
         city: '전주',
         food_title: '베테랑 칼국수',
