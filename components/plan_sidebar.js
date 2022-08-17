@@ -1,18 +1,38 @@
-import React, { useState } from 'react'
-import SetPlan from '../components/setPlan'
+import Head from 'next/head'
+import Mapscreen from '../components/Mapscreen';
 import PlanDay from '../components/plan_day'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleRight } from '@fortawesome/free-solid-svg-icons'
+import { useState } from 'react'
 
-export default function Plan_sidebar() {
+export default function travelRegister() {
+    const [toggleBtn, setToggle] = useState(false);
+
+    const toggleToParent = (x) => {
+        setToggle(!x);
+    }
+    const toggleSidebar = () => {
+        setToggle(toggleBtn => !toggleBtn);
+    }
+
     return (
-        <div className='grid grid-rows-6 w-[400px] h-[720px]'>
-            <div className='row-start-1'>
-                    <SetPlan />
+        <>
+            <div>
+                <Head>
+                    <title>여행 등록</title>
+                </Head>
             </div>
 
-            <div className='row-start-2 grid-span-5 container overflow-scroll h-screen w-[400px] scroll-smooth bg-slate-50 '>
-                <PlanDay/>
+            <div>
+                {toggleBtn ?
+                    <button onClick={() => toggleSidebar()}>
+                        <FontAwesomeIcon icon={faCircleRight} size='xl' className='m-3' />
+                    </button> :
+                    <div>
+                        {toggleBtn ? "" : <PlanDay toggleToParent={toggleToParent} />}
+                    </div>}
             </div>
-        </div>
-        
-    )
+        </>
+    );
+
 }

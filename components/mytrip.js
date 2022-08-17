@@ -5,6 +5,7 @@ import { useRouter } from 'next/router';
 
 export default function Mytrip() {
     const router = useRouter();
+
     return (
         <div>
             <div className='grid grid-cols-2 gap-8 m-10'>
