@@ -28,6 +28,8 @@ export default function Plan_list() {
 
     const handleRemove = (cardId) => {
         console.log('delete_click!')
+        //test
+        // setCardList(cardList.filter((card) => card.index !== 0));
     };
     
     return (
