@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import PlanDay from '../components/plan_day'
+import Set_schedule from '../components/set_schedule'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleRight } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
@@ -28,7 +28,7 @@ export default function Plan_sidebar() {
                         <FontAwesomeIcon icon={faCircleRight} size='xl' className='m-3' />
                     </button> :
                     <div className='row-start-2 grid-span-5 container overflow-scroll h-screen w-[400px] scroll-smooth bg-slate-50 '>
-                        {toggleBtn ? "" : <PlanDay toggleToParent={toggleToParent} />}
+                        {toggleBtn ? "" : <Set_schedule toggleToParent={toggleToParent} />}
                     </div>}
             </div>
         </>

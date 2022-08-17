@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import PlanList from '../components/plan_list'
+import PlanList from './plan_list'
 import TextField from '@mui/material/TextField';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleLeft } from '@fortawesome/free-solid-svg-icons'
 
 
-export default function Plan_day({ toggleToParent }) {
+export default function Set_schedule({ toggleToParent }) {
     const today = new Date();
     var lenOfDayList = 0;
     const [startDate, setStartDate] = useState(today);

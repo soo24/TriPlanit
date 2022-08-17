@@ -4,8 +4,8 @@ import noodlePic from '../public/noodle.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
-import Modal from '../components/modal';
 import CardModal from '../components/modal/CardModal'
+import AddModal from './modal/addModal'
 import { modalClasses } from '@mui/material';
 
 
@@ -21,19 +21,16 @@ export default function Plan_list() {
     },
     ])
     
-    const [modal, setModal] = useState(false);
-
-
     const handleAddCard = () => {
-        console.log('click!')
+        console.log('add click!')
         setCardList([
             ...cardList,
             {
                 // 몰달 modal 띄우는거 여기에 작성
                 
             },
-        ])
-    }
+        ]);
+    };
 
     const handleRemove = (cardId) => {
         console.log('delete_click!')
@@ -87,23 +84,22 @@ export default function Plan_list() {
 
                     
                        
-                        <button onClick={() => { setModal(true) }} > 
+                        <button> 
+                            <AddModal
+                            onAdd={() => handleAddCard()}
+                            onCancel={() => console.log('저장 취소')}
+                            buttons={[
+                                { role: "cancel", toClose: true, classes: "bg-gray-200 px-4 py-2 rounded-lg hover:bg-gray-300 transition-all duration-200", label: "취소" },
+                                { role: "add", toClose: true, classes: "bg-blue-200 px-4 py-2 rounded-lg hover:bg-blue-300 transition-all duration-200", label: "추가" },
+                               
+                            ]}
+                            >
                             <div className='bg-white w-[100px] h-[80px] border-white p-6 rounded-md'>
                             <FontAwesomeIcon icon={faPlus} size='2xl' />
                             </div>
-                
+                            </AddModal>
                         </button>
-                        {modal ? <Modal /> : null}
-                        {modal ? <button onClick={handleAddCard} className='w-full'> Add </button> : ""}
-                        {modal ? <button onClick={() => { setModal(false) }} className='w-full'> Close</button> : "" }
-                        
-
-                        
-                  
             </div>
-
-            
-
         </div>
     )
 }
