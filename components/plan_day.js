@@ -129,11 +129,13 @@ export default function Plan_day({ toggleToParent }) {
             </div>
 
             <div className='container w-[400px] bg-slate-50'>
-                <button className='bg-blue-200 hover:bg-blue-300 hover:text-white' onClick={() => calTheDay()}>
+            
+                <div className='grid grid-cols-1 mb-1'>
+                <button className='bg-blue-300 hover:bg-blue-400 hover:text-white' onClick={() => calTheDay()}>
                     만들기
                 </button>
-                <div className='grid grid-cols-1 mb-1'>
                     {
+                        
                         dayList.map((day, index) => {
                             return (
                                 
