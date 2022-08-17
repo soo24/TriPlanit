@@ -2,11 +2,13 @@ import Link from 'next/link';
 import Image from 'next/image'
 import Logo from '../public/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarDays, faLocationDot, faUsersLine } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarDays, faLocationDot, faUser } from "@fortawesome/free-solid-svg-icons";
 import { useRouter } from 'next/router';
+import { useSession, signIn, signOut, getSession } from 'next-auth/react';
 
 export default function TopBar() {
   const router = useRouter();
+  const { data: session } = useSession();
 
   return (
     <div className='bg-blue-200 pt-6 pl-6w-full'>
@@ -43,11 +45,10 @@ export default function TopBar() {
           </div>
 
 
-        <div className='col-start-1 ml-3 hover:cursor-pointer' >
+        <div className='col-start-1  ml-3 hover:cursor-pointer' >
           <Link href='/travelRegister'>
             <div>
               <FontAwesomeIcon icon={faCalendarDays} size='lg' className='mr-2' />
-
               여행 등록
             </div>
           </Link>
@@ -61,13 +62,18 @@ export default function TopBar() {
             </div>
           </Link>
         </div>
-        <div className='col-start-3 ml-5 hover:cursor-pointer'>
-          <Link href="">
-            <div>
-              <FontAwesomeIcon icon={faUsersLine} size='lg' className='mr-2' />
-              커뮤니티
+        
+        <div className='col-start-3 col-span-2 ml-5 hover:cursor-pointer'>
+        {session? <Link href='/myPage'><div>
+              <FontAwesomeIcon icon={faUser} size='lg' className='mr-2' />
+              내 정보
+            </div>
+          </Link>:<Link href='/login'><div>
+              <FontAwesomeIcon icon={faUser} size='lg' className='mr-2' />
+              내 정보
             </div>
           </Link>
+          }
         </div>
 
       </div>

@@ -4,7 +4,7 @@ import randomPic from '../public/fff.png';
 export default function Others({title}) {
     return (
         <div>
-            <div className="text-xl font-bold mb-5 ml-5 p-2">
+            <div className="text-2xl font-bold mb-5 ml-5 p-2">
                 <h1>타인의 여행</h1>
             </div>
             <div className='m-7'>
