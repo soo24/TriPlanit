@@ -13,7 +13,7 @@ import TextField from '@mui/material/TextField';
 
 export default function MyPage() {
     const { data: session } = useSession();
-    const [gender, setGender] = useState(gender);
+    const [gender, setGender] = useState('male');
     const [birth, setBirth] = useState(new Date());
     const [btnclick, setBtnClick] = useState(false);
 
