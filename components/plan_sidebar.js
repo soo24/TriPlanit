@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import Mapscreen from '../components/Mapscreen';
 import PlanDay from '../components/plan_day'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleRight } from '@fortawesome/free-solid-svg-icons'
