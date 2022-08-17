@@ -14,6 +14,7 @@ export default function CardModal({
 
     useEffect(() => {
         setIsOpen(isOpen);
+        console.log(isOpen);
         if(!isOpen) {
             document.documentElement.style.overflow = "auto";
         } else {
