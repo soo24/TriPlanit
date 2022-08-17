@@ -26,6 +26,7 @@ export default function CardModal({
         setIsOpen(!isOpen);
         
     }
+
     return <>
         <div onClick={() => HandleChange()}>
             {children}
@@ -41,7 +42,7 @@ export default function CardModal({
                 leaveTo="opacity-0"
                 leaveFrom="opacity-100"
             >
-                <div onClick={() => HandleChange()} className="z-20 w-full h-full left-0 top-0 bg-black/50 fixed" />
+                <div onClick={() => HandleChange()} className="z-50 w-full h-full left-0 top-0 bg-black/50 fixed" />
             </Transition.Child>
             <Transition.Child
                 as={Fragment}
@@ -52,7 +53,7 @@ export default function CardModal({
                 leaveTo="opacity-0 scale-75"
                 leaveFrom="opacity-100 scale-100"
             >
-                <div className="z-30 absolute top-1/3 left-1/3">
+                <div className="z-50 absolute w-full top-1/3 left-[140%]">
                     <div className={`max-w-[28rem] w-full ${classes ? classes : 'p-4 bg-white rounded-lg'}`}>
                         <div className="w-full flex justify-between items-center mb-6">
                             <p className="font-medium text-lg">{title}</p>
