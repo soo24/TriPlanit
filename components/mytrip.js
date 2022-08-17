@@ -3,10 +3,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlane } from '@fortawesome/free-solid-svg-icons';
 import { useRouter } from 'next/router';
 
-export default function mytrip() {
-
+export default function Mytrip() {
     const router = useRouter();
-    
+
     return (
         <div>
             <div className='grid grid-cols-2 gap-8 m-10'>

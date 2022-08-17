@@ -2,6 +2,7 @@ import { Map, MapMarker, MapInfoWindow} from "react-kakao-maps-sdk"
 import { useEffect,useState } from 'react'
 import MapOverlay from "./MapOverlay";
 import MapLine from "./MapLine";
+import Image from "next/image";
 
 export default function Mapscreen() {
     const [markers, setMarkers] = useState([])
@@ -22,7 +23,7 @@ export default function Mapscreen() {
           {isOpen && (
             <div className="p-2">
               <MapOverlay content={content} address={address} />
-              <img
+              <Image
                 alt="close"
                 width="14"
                 height="13"
