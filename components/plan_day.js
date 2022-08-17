@@ -23,6 +23,10 @@ export default function Plan_day({ toggleToParent }) {
 
     const [dayList, setCardList] = useState([]);
 
+    const checkPlan = () => {
+        
+    }
+
     const calTheDay = () => {
         setDayToggle(dayToggle => !dayToggle);
         var tempDate = startDate.getDate();
