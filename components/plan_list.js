@@ -9,6 +9,7 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 export default function Plan_list() {
 
     const [cardList, setCardList] = useState([{
+        id:0,
         city: '전주',
         food_title: '베테랑 칼국수',
         time : '11:30 AM',
@@ -29,6 +30,7 @@ export default function Plan_list() {
     const handleRemove = (cardId) => {
         console.log('delete_click!')
         //test
+        //setCardList(cardList.filter((card) => card.id !== 0));
         // setCardList(cardList.filter((card) => card.index !== 0));
     };
     
