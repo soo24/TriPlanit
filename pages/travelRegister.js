@@ -1,8 +1,12 @@
+import React, { useState } from 'react'
 import Head from 'next/head'
 import Plan_sidebar from '../components/plan_sidebar'
 import Mapscreen from '../components/MapScreen';
+import Modal from '../components/modal';
 
 export default function TravelRegister() {
+
+    const [modal, setModal] = useState(false);
 
     return (
         <>
@@ -11,9 +15,9 @@ export default function TravelRegister() {
                     <title>여행 등록</title>
                 </Head>
             </div>
-
             <div className='fixed z-50'> 
                 <Plan_sidebar /> 
+
             </div>
 
             <div className='z-10'>
@@ -24,6 +28,7 @@ export default function TravelRegister() {
                 플랜 저장
             </button>
             
+
 
         </>
     );

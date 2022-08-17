@@ -4,6 +4,7 @@ import noodlePic from '../public/noodle.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
+import Modal from '../components/modal';
 
 
 export default function Plan_list() {
@@ -16,6 +17,9 @@ export default function Plan_list() {
         food_pic: noodlePic
     },
     ])
+    
+    const [modal, setModal] = useState(false);
+
 
     const handleAddCard = () => {
         console.log('click!')
@@ -23,6 +27,7 @@ export default function Plan_list() {
             ...cardList,
             {
                 // 몰달 modal 띄우는거 여기에 작성
+                
             },
         ])
     }
@@ -60,12 +65,24 @@ export default function Plan_list() {
 
 
             <div className='bg-blue-100 mt-1.5 mb-1.5 ml-6 mr-6 border-white p-3'>
-                <button onClick={handleAddCard} className='w-full'>
-                    <div className='bg-white w-[100px] h-[80px] border-white p-6 rounded-md'>
-                        <FontAwesomeIcon icon={faPlus} size='2xl' />
-                    </div>
-                </button>
+
+                    
+                       
+                        <button onClick={() => { setModal(true) }} > 
+                            <div className='bg-white w-[100px] h-[80px] border-white p-6 rounded-md'>
+                            <FontAwesomeIcon icon={faPlus} size='2xl' />
+                            </div>
+                
+                        </button>
+                        {modal ? <Modal /> : null}
+
+                        <button className='hidden' onClick={() => { setModal(false) }} > 모달창 닫기</button>
+
+                        
+                  
             </div>
+
+            
 
         </div>
     )
