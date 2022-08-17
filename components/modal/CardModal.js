@@ -51,7 +51,7 @@ export default function CardModal({
                 leaveTo="opacity-0 scale-75"
                 leaveFrom="opacity-100 scale-100"
             >
-                <div className="z-30 w-full h-full flex justify-center items-center fixed">
+                <div className="z-30 absolute top-1/3 left-1/3">
                     <div className={`max-w-[28rem] w-full ${classes ? classes : 'p-4 bg-white rounded-lg'}`}>
                         <div className="w-full flex justify-between items-center mb-6">
                             <p className="font-medium text-lg">{title}</p>
