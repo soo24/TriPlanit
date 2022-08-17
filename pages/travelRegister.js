@@ -12,16 +12,18 @@ export default function TravelRegister() {
                 </Head>
             </div>
 
-            
-                {/* 오버레이 짜야함 */}
+            <div className='fixed z-50'> 
+                <Plan_sidebar /> 
+            </div>
+
+            <div className='z-10'>
                 <Mapscreen />
+            </div>
             
- 
-            {/* <div className='z-20'> <Plan_sidebar /> </div>
-            
-            <button className="fixed z-90 bottom-10 right-8 items-center px-6 py-2 bg-blue-400 hover:bg-blue-700 text-white font-xl rounded-md mx-2 hover:bg-blue-700 hover:drop-shadow-2xl hover:animate-bounce duration-300">
+            <button className="fixed z-50 bottom-10 right-8 items-center px-6 py-2 bg-blue-400 hover:bg-blue-700 text-white font-xl rounded-md mx-2 hover:bg-blue-700 hover:drop-shadow-2xl hover:animate-bounce duration-300">
                 플랜 저장
-            </button> */}
+            </button>
+            
 
         </>
     );
