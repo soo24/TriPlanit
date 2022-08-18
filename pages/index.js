@@ -7,17 +7,19 @@ import Others from '../components/Others';
 
 // auth
 import { useSession, signIn, signOut, getSession } from 'next-auth/react';
+import cookies from 'next-cookies';
+import { getToken } from 'next-auth/jwt';
+import { faJarWheat } from '@fortawesome/free-solid-svg-icons';
 
 export default function Home() {
   const { data: session } = useSession();
+  
   <Head>
     <title>HomePage</title>
   </Head>
   if (session) {
     return (
       <div>
-
-
         <TopBar />
         <div>
           <p className="text-right pr-5">안녕하세요, {session.user.name}님</p>
@@ -34,8 +36,6 @@ export default function Home() {
   } else {
     return (
       <div>
-
-
         <TopBar />
         <MyTrip />
         <Others />
@@ -45,10 +45,15 @@ export default function Home() {
   }
 }
 
-export const getServerSideProps = async (context) => {
-  const session = await getSession(context)
+// export const getServerSideProps = async (context) => {
+//   const session = await getSession(context);
+//   const req = context.req;
+//   const secret = process.env.JWT_SECRET;
+//   req.cookies = cookies(context);
+//   const token = await getToken({ req, secret });
+//   console.log(token);
 
-  return {
-    props: { session },
-  }
-}
+//   return {
+//     props: { session, token },
+//   }
+// }
