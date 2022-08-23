@@ -8,7 +8,7 @@ from triplanit.models import UserList
 class UserListSerializer(serializers.ModelSerializer):
     class Meta:
         model = UserList
-        fields = ['name', 'date_birth', 'gender', 'liked_plan']
+        fields = ['name', 'date_birth', 'gender', 'liked_plan', 'email']
 
 # ViewSets define the view behavior.
 class UserViewSet(viewsets.ModelViewSet):

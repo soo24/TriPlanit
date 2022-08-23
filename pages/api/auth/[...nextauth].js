@@ -16,12 +16,28 @@ export default NextAuth({
 
         callbacks: {
                 async session({ session, token, user, account }) {
-                  session.user.id = token.id;
-                  session.accessToken = token.accessToken;
-                  console.log(session);
+                        session.data = {
+                                ...
+                                session.user,
+                                account,
+                        };
+                        console.log("Executing session:");
+                        session.user.id = token.id;
+                        session.accessToken = token.accessToken;
+                        console.log(session.data);
+                        console.log(session);
+                        
 
-                  return session;
+                        return session;
                 },
+                // async jwt(token, user, account, profile, isNewUser) {
+                //         console.log("Executing jwt");
+                //         console.log(token);
+                //         if (account?.accessToken) {
+                //                 token.accessToken = account.accessToken;
+                //         }
+                //         return token;
+                // },
         },
         // callbacks: {
         //         async jwt(token, account) {

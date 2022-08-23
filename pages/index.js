@@ -7,9 +7,6 @@ import Others from '../components/Others';
 
 // auth
 import { useSession, signIn, signOut, getSession } from 'next-auth/react';
-import cookies from 'next-cookies';
-import { getToken } from 'next-auth/jwt';
-import { faJarWheat } from '@fortawesome/free-solid-svg-icons';
 
 export default function Home() {
   const { data: session } = useSession();
@@ -45,6 +42,7 @@ export default function Home() {
   }
 }
 
+/** used for getting session for google authentication - current: not used */
 // export const getServerSideProps = async (context) => {
 //   const session = await getSession(context);
 //   const req = context.req;
@@ -56,4 +54,19 @@ export default function Home() {
 //   return {
 //     props: { session, token },
 //   }
+// }
+
+/** will be used for requesting the daat of the user - not yet implemented */
+// export async function getServerSideProps() {
+//   // Fetch data from external API
+//   const res = await fetch(`http://127.0.0.1:8000/triplanit/`, {
+//     method='POST',
+//     headers = {
+//       'Content-Type' : 'application/json',
+//     },
+//   })
+//   const data = await res.json()
+
+//   // Pass data to the page via props
+//   return { props: { data } }
 // }

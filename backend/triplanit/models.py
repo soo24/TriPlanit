@@ -10,6 +10,7 @@ class UserList(models.Model):
     date_birth = models.DateField()
     gender = models.IntegerField(choices=Gender.choices)
     liked_plan = ArrayField(models.IntegerField(), blank=True)
+    email = models.CharField(max_length=200, blank=False, default='')
 
 
 class PlanList(models.Model):
