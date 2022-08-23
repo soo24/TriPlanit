@@ -1,4 +1,6 @@
 import React, { useState,Fragment, useEffect } from 'react';
+import CardForm from './CardForm'
+
 const { Transition } = require("@headlessui/react");
 
 export default function AddModal({
@@ -47,13 +49,7 @@ export default function AddModal({
                     
                     <div className="flex justify-between items-center mb-6">
 
-                        <div className='p-[20px] bg-blue-100 text-start w-full'>
-                            <form>장소
-                                <input type="text" id="search" name="search" required minLength="1"
-                                    placeholder=" 장소를 선택해주세요 " className="w-[80%] h-[30px] m-[10px]" />
-                            </form>
-                            <p>시간</p>
-                        </div>
+                        <CardForm />
                     </div>
 
 

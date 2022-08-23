@@ -6,7 +6,7 @@ class UserList(models.Model):
         Male = 1
         Female = 2
 
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=300)
     date_birth = models.DateField()
     gender = models.IntegerField(choices=Gender.choices)
     liked_plan = ArrayField(models.IntegerField(), blank=True)
