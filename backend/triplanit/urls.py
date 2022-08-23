@@ -4,7 +4,7 @@ from triplanit import views
 
 urlpatterns = [
     path('triplanit/', views.api_root),
-    path('triplaint/users/', views.UserList.as_view(), name='user'),
+    path('triplanit/user/', views.UserList_List.as_view(), name='user'),
 
 ]
 

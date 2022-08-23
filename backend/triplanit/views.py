@@ -13,7 +13,7 @@ class UserList_List(generics.ListAPIView):
         serializer_class = UserListSerializer
 
 @api_view(['GET', 'POST'])
-def user_list(request, format=None):
+def user(request, format=None):
     if request.method == 'GET':
         snippets = UserList.objects.all()
         serializer = UserListSerializer(snippets, many=True)
