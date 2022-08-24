@@ -1,5 +1,11 @@
+from email.mime import image
+from email.policy import default
+from hashlib import blake2b
 from django.db import models
 from django.contrib.postgres.fields import ArrayField
+
+def user_directory_path(instance, filename):
+    return 'user_{0}/{1}'.format(instance.user.id, filename)
 
 class UserList(models.Model):
     class Gender(models.IntegerChoices):
@@ -7,10 +13,12 @@ class UserList(models.Model):
         Female = 2
 
     name = models.CharField(max_length=200)
-    date_birth = models.DateField()
+    date_birth = models.DateField(blank=True, null=True)
     gender = models.IntegerField(choices=Gender.choices)
-    liked_plan = ArrayField(models.IntegerField(), blank=True)
-    email = models.CharField(max_length=200, blank=False, default='')
+    liked_plan = ArrayField(models.IntegerField(null=True, blank=True), null=True)
+    email = models.CharField(max_length=200, blank=False)
+    age = models.IntegerField(blank=True)
+    profile_img = models.ImageField(upload_to = user_directory_path, blank=True, null=True)
 
 
 class PlanList(models.Model):
