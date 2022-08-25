@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import PlanList from './plan_list'
+import CardModal from '../components/modal/CardModal'
 import TextField from '@mui/material/TextField';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -23,9 +24,32 @@ export default function Set_schedule({ toggleToParent }) {
 
     const [dayList, setCardList] = useState([]);
 
-    const checkPlan = () => {
-        
+    //plan data 받아올 변수
+    const planData=[];
+    const [isClicked, setIsClicked] = useState([false]);
+
+    const HandleChange = () => {
+        console.log("state change");
+        setIsClicked(!isClicked);
+        console.log(isClicked);
     }
+
+
+    //컴포넌트 렌더링 시 Day단위의 데이터를 나누어서 불러옴
+    const passData = (data) => {
+        if(isClicked==true){
+            console.log("Passing Data");
+            planData.push(data);
+            console.log(planData);
+        }
+    }
+
+    //버튼 클릭 시, 플랜을 저장하는 함수
+    const savePlan = (data) => {
+        console.log("Set value");
+        console.log(value);
+    }
+
 
     const calTheDay = () => {
         setDayToggle(dayToggle => !dayToggle);
@@ -85,6 +109,7 @@ export default function Set_schedule({ toggleToParent }) {
     }
 
     return (
+        <>
         <div>
             <div className='bg-blue-200 w-[400px] h-[120px]' >
                 <div className='grid grid-cols-8 gap-2 mx-3'>
@@ -145,7 +170,7 @@ export default function Set_schedule({ toggleToParent }) {
                             return (
                                 <div id={index} key={index} className="text-lg align-text-bottom text-stone-700  mt-6">
                                     <p className=" ml-6"> Day {day.day_id} - {day.day_month}.{day.day_date}</p>
-                                    <PlanList day_id={day.day_id} />
+                                    <PlanList day_id={day.day_id} passData={passData}/>
                                 </div>
                             )
                         })
@@ -153,5 +178,25 @@ export default function Set_schedule({ toggleToParent }) {
                 </div>
             </div>
         </div>
+
+        
+            <CardModal
+                title={"일정을 저장하시겠습니까?"}
+                content={"현재까지 작성한 일정을 저장합니다."}
+                onConfirm={() => HandleChange()}
+                onCancel={() => console.log('Plan Saving')}
+                buttons={[
+                    { role: "cancel", toClose: true, classes: "bg-zinc-500/20 px-4 py-2 rounded-lg hover:bg-zinc-500/30 transition-all duration-200", label: "취소" },
+                    { role: "confirm", toClose: true, classes: "bg-blue-200 px-4 py-2 rounded-lg hover:bg-blue-400 transition-all duration-200", label: "저장" }
+                ]}
+            >
+                 <button
+                    onClick={HandleChange}
+                    className="fixed z-50 bottom-10 right-8 items-center px-6 py-2 bg-blue-400 hover:bg-blue-700 text-white font-xl rounded-md mx-2 hover:bg-blue-700 hover:drop-shadow-2xl hover:animate-bounce duration-300"
+                >플랜 저장
+                </button>
+            </CardModal>
+
+        </>
     );
 }

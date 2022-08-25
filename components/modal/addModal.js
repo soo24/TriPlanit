@@ -23,7 +23,6 @@ export default function AddModal({
 
     const HandleChange = () => {
         setIsOpen(!isOpen);
-
     }
 
     return <>

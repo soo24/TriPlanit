@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, forwardRef, useImperativeHandle } from 'react'
 import Image from "next/image";
 import noodlePic from '../public/noodle.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,10 +9,12 @@ import AddModal from './modal/addModal'
 import { modalClasses } from '@mui/material';
 
 
-export default function Plan_list({ day_id }) {
+export default function Plan_list({ day_id, passData}) {
+
 
     const [cardList, setCardList] = useState([{
         //삭제기능 테스트를 위한 데이터
+        day: day_id,
         id: 0,
         city: '전주',
         food_title: '베테랑 칼국수',
@@ -54,7 +56,10 @@ export default function Plan_list({ day_id }) {
         setCardList(cardList.filter((card) => card.id !== 0));
     };
 
+    passData(cardList);
+
     return (
+        <>
         <div className='grid grid-cols-1 text-stone-900'>
             {
                 cardList.map((card, index) => {
@@ -107,5 +112,7 @@ export default function Plan_list({ day_id }) {
                 </button>
             </div>
         </div>
+
+        </>
     )
 }
