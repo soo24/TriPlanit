@@ -46,8 +46,8 @@ export default function Set_schedule({ toggleToParent }) {
 
     //버튼 클릭 시, 플랜을 저장하는 함수
     const savePlan = (data) => {
-        console.log("Set value");
-        console.log(value);
+        console.log("Plan Saved");
+        console.log(data);
     }
 
 
@@ -183,7 +183,7 @@ export default function Set_schedule({ toggleToParent }) {
             <CardModal
                 title={"일정을 저장하시겠습니까?"}
                 content={"현재까지 작성한 일정을 저장합니다."}
-                onConfirm={() => HandleChange()}
+                onConfirm={() => {HandleChange(), savePlan()}}
                 onCancel={() => console.log('Plan Saving')}
                 buttons={[
                     { role: "cancel", toClose: true, classes: "bg-zinc-500/20 px-4 py-2 rounded-lg hover:bg-zinc-500/30 transition-all duration-200", label: "취소" },
