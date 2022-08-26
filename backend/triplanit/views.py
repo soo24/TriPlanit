@@ -21,6 +21,7 @@ def user(request, email, format=None):
 
 
         if request.method == 'GET':
+                user = UserList.objects.all()
                 serializer = UserListSerializer(user)
                 return Response(serializer.data)
 

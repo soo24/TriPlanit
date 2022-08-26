@@ -26,6 +26,20 @@ export default NextAuth({
                         session.accessToken = token.accessToken;
                         console.log(session.data);
                         console.log(session);
+
+                        const response = await fetch('http://127.0.0.1:8000/triplanit/user/', {
+                                method: 'GET',
+                                headers: {
+                                        'Content-Type': 'application/json',
+                                },
+                                body: JSON.parse(
+                                        {
+                                                "email": session.email,
+                                        }
+                                ),
+                        })
+
+                        if(response )
                         
 
                         return session;
